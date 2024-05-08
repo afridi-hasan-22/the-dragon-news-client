@@ -2,10 +2,12 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { toast } from 'react-toastify';
+import useTitle from '../../../Hooks/useTitle';
 
 
 const Register = () => {
   const {createUser} = useContext(AuthContext);
+  useTitle('Register')
   const [accepted, setAccepted] = useState(false)
   const handleCheckbox = (event) => {
     setAccepted(event.target.checked);

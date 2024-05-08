@@ -2,9 +2,11 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { toast } from 'react-toastify';
+import useTitle from '../../../Hooks/useTitle';
 
 const Login = () => {
   const {signIn} = useContext(AuthContext);
+  useTitle('Login')
   const navigate = useNavigate()
   const location = useLocation()
   console.log('login page location', location);
